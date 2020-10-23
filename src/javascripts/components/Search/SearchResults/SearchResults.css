@@ -1,0 +1,35 @@
+.search-results {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-results a {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  margin: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.search-results a:hover {
+  transform: scale(1.05);
+}
+
+.search-results a img {
+  height: 200px;
+  width: inherit;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.search-results a span {
+  background: #FFF;
+  color: #000;
+  padding: 1rem 0;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  flex-grow: 1;
+}
