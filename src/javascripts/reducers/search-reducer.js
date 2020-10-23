@@ -9,8 +9,7 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case UPDATE_SEARCH_RESULTS: {
-      const searchResults = action.searchResults && action.searchResults.results;
-      const results = action.setEmpty ? [] : [...state.results, ...searchResults];
+      const results = action.setEmpty ? [] : [...state.results, ...action.searchResults];
       return { ...state, results };
     }
     case UPDATE_LOAD_MORE: {

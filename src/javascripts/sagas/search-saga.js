@@ -10,9 +10,11 @@ export const getSearchData = function*(action) {
     }
     yield put(updateLoader(true));
     const searchResults = yield call(getSearchResults, action.query, action.page);
-    yield put(updateSearchResults(searchResults));
+    if(searchResults && searchResults.results && searchResults.results.length > 0) {
+      yield put(updateSearchResults(searchResults.results));
+      yield put(updateLoadMore(true));
+    }
     yield put(updateLoader(false));
-    yield put(updateLoadMore(true));
   } catch (error) {
     yield put(updateLoader(false));
     yield put(updateLoadMore(false));
